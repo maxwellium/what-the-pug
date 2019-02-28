@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>what the acutal pug!</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    body {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "input output";
+      grid-template-rows: auto 1fr;
+    }
+
+    #header h2 {
+      text-align: center;
+      color: #F8F8F2;
+    }
+
+    #header {
+      grid-area: header;
+      background-color: #272822;
+    }
+    #html-editor {
+      grid-area: input;
+    }
+    #pug-editor {
+      grid-area: output;
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        grid-template-areas:
+        "header"
+        "input"
+        "output";
+        grid-template-rows: auto 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <div id="header"><h2>What the Pug</h2></div>
+    <div id="html-editor">&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+
+&#x3C;head&#x3E;
+  &#x3C;title&#x3E;Pug&#x3C;/title&#x3E;
+  &#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+    const foo = true;
+    let bar = function() {};
+    if (foo) {
+      bar(1 + 5)
+    }
+  &#x3C;/script&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+  &#x3C;h1 (click)=&#x27;angulay()&#x27;&#x3E;Pug - node template engine&#x3C;/h1&#x3E;
+  &#x3C;div [class.mimimi]=&#x22;test&#x22;&#x3E;asd
+    sdasd
+    &#x3C;span&#x3E;asd&#x3C;/span&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div class=&#x22;col&#x22; id=&#x22;container&#x22;&#x3E;
+    &#x3C;p *ngIf=&#x27;amazing&#x27;&#x3E;You are amazing&#x3C;/p&#x3E;
+    &#x3C;p&#x3E;
+      Pug is a terse and simple
+      templating language with a
+      strong focus on performance
+      and powerful features.
+    &#x3C;/p&#x3E;
+  &#x3C;/div&#x3E;
+  &#x3C;div&#x3E;&#x3C;img src=&#x22;{{itemImageUrl}}&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;p&#x3E;{{title}}&#x3C;/p&#x3E;
+&#x3C;/body&#x3E;
+
+&#x3C;/html&#x3E;</div>
+    <div id="pug-editor"></div>
+
+    <script src="ace/ace.js" type="text/javascript"></script>
+    <script src="ace/mode-html.js" type="text/javascript"></script>
+    <script src="ace/mode-jade.js" type="text/javascript"></script>
+    <script src="bundle.js" type="text/javascript"></script>
+</body>
+
+</html>
