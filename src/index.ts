@@ -92,11 +92,11 @@ export function transform(
     if ( dotmode ) {
 
       let [ _w ] = lines[ 0 ].match( /^\s*/ ) || [ '' ];
-      
+
       if ( _w.length ) {
         lines = lines.map( s => s.replace( new RegExp( '^' + _w ), '' ) );
       }
-      
+
       output[ output.length - 1 ] += '.';
     }
 
@@ -122,7 +122,7 @@ export function transform(
     onopentag,
     ontext,
     onclosetag
-  }, { decodeEntities: true } );
+  }, { decodeEntities: true, lowerCaseAttributeNames: false } );
 
   parser.write( html );
   parser.end();

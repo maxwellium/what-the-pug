@@ -76,7 +76,7 @@ function transform(html, quote = "'" /* SINGLE */, indent = 2) {
         onopentag,
         ontext,
         onclosetag
-    }, { decodeEntities: true });
+    }, { decodeEntities: true, lowerCaseAttributeNames: false });
     parser.write(html);
     parser.end();
     return output;
