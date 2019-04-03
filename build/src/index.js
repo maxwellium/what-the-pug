@@ -38,7 +38,7 @@ function transform(html, quote = "'" /* SINGLE */, indent = 2) {
         if (attributeList.length) {
             tag += `(${attributeList
                 .map(({ key, val }) => `${key}=${val}`)
-                .join('')})`;
+                .join(' ')})`;
         }
         tag = tag.replace(/^div([\.#])/, '$1');
         output.push(' '.repeat(level * indent) + tag);

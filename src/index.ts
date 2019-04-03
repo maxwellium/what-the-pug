@@ -1,4 +1,4 @@
-import { Parser } from 'htmlparser2';
+import { Parser, DomHandler } from 'htmlparser2';
 
 export const enum Quote {
   SINGLE = "'",
@@ -69,7 +69,7 @@ export function transform(
       tag += `(${
         attributeList
           .map( ( { key, val } ) => `${ key }=${ val }` )
-          .join( '' )
+          .join( ' ' )
         })`;
     }
 
@@ -118,7 +118,7 @@ export function transform(
   };
 
 
-  const parser = new Parser( {
+  const parser = new Parser( <DomHandler> {
     onopentag,
     ontext,
     onclosetag
