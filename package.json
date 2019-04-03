@@ -1,6 +1,6 @@
 {
   "name": "what-the-pug",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "high fidelity html to pug conversion",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
