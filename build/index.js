@@ -1,13 +1,11 @@
-const { transform } = require( '../src/index' );
+const { transform } = require( 'what-the-pug' );
 
 
 function debounce( func, wait = 100 ) {
   let timeout;
-  return function ( ...args ) {
+  return function () {
     clearTimeout( timeout );
-    timeout = setTimeout( () => {
-      func.apply( this, args );
-    }, wait );
+    timeout = setTimeout( func, wait );
   };
 }
 
