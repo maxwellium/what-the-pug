@@ -13,7 +13,8 @@
 </head>
 
 <body>
-  <h1 (click)='angulay()'>Pug - node template engine</h1>
+  <h1 (click)='doSth()' [class.test]='beSth'>Pug - node template engine</h1>
+  <a [routerLink]="link">test with one attribute</a>
   <a [routerLink]="link" [attr.title]="desc">test with two attributes</a>
   <div class="test">asd
     sdasd

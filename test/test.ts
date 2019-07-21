@@ -1,16 +1,17 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync } from 'fs';
 import { join } from 'path';
 import { transform } from '../src/index';
+import { strictEqual } from 'assert';
 
 
-const html = readFileSync(
+const input = readFileSync(
   join( __dirname, '..', '..', 'test', 'data.html' ),
   'utf8'
 );
-const output = transform( html );
-
-writeFileSync(
+const expected = readFileSync(
   join( __dirname, '..', '..', 'test', 'data.pug' ),
-  output.join( '\n' )
+  'utf8'
 );
-console.log( output );
+const actual = transform( input ).join( '\n' );
+
+strictEqual( actual, expected );

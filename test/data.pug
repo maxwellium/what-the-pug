@@ -1,3 +1,4 @@
+doctype html
 html(lang='en')
   head
     title Pug
@@ -8,8 +9,15 @@ html(lang='en')
         bar(1 + 5)
       }
   body
-    h1('(click)'='angulay()') Pug - node template engine
-    a('[routerLink]'='link' '[attr.title]'='desc') test with two attributes
+    h1(
+      (click)='doSth()',
+      [class.test]='beSth'
+    ) Pug - node template engine
+    a([routerLink]='link') test with one attribute
+    a(
+      [routerLink]='link',
+      [attr.title]='desc'
+    ) test with two attributes
     .test
       | asd
       | sdasd
